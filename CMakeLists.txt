@@ -35,5 +35,6 @@ CPMAddPackage(
 find_package(lua51 REQUIRED)
 
 add_library(luabitop.luabitop-static STATIC ${CMAKE_CURRENT_SOURCE_DIR}/bit.c)
+add_library(luabitop::luabitop-static ALIAS luabitop.luabitop-static)
 target_link_libraries(luabitop.luabitop-static PUBLIC lua51.liblua-static)
 set_target_properties(luabitop.luabitop-static PROPERTIES EXPORT_NAME luabitop-static OUTPUT_NAME luabitop-static)
